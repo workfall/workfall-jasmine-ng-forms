@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { HotelData } from 'src/app/models';
+import { PropertiesEntity } from 'src/app/models';
 
 @Component({
   selector: 'app-hotel-card',
@@ -7,7 +7,7 @@ import { HotelData } from 'src/app/models';
   styleUrls: ['./hotel-card.component.scss']
 })
 export class HotelCardComponent {
-  @Input() data!: HotelData;
+  @Input() data!: PropertiesEntity;
 
   handleViewImage() {}
 }

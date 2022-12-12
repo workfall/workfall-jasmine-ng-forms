@@ -1,5 +1,5 @@
 .card {
-  width: 18rem;
+  margin-bottom: 1rem;
 }
 
 .card-title {
@@ -9,4 +9,9 @@
    -webkit-line-clamp: 1; /* number of lines to show */
            line-clamp: 1;
    -webkit-box-orient: vertical;
+}
+
+img {
+  height: 150px;
+  object-fit: cover;
 }

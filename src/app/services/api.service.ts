@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HotelData, HotelDomainsEnum, RegionData, SearchHotelParams } from '../models';
+import { DomainData, HotelData, RegionData, SearchHotelParams } from '../models';
 
 @Injectable({
   providedIn: 'root',
@@ -11,10 +11,10 @@ export class ApiService {
 
   constructor(private http: HttpClient) {}
 
-  searchRegions(query: string, domain: HotelDomainsEnum): Observable<RegionData> {
+  searchRegions(query: string, domain: string, locale: string): Observable<RegionData> {
     return this.http.get<RegionData>(`${this.apiURL}regions`, {
       params: {
-        locale: 'en_GB',
+        locale,
         query,
         domain
       }
@@ -24,7 +24,11 @@ export class ApiService {
   searchHotel(params: SearchHotelParams): Observable<HotelData> {
     return this.http.get<HotelData>(`${this.apiURL}hotels/search`, {
       params
-    })
+    });
+  }
+
+  getDomains(): Observable<DomainData> {
+    return this.http.get<DomainData>(`${this.apiURL}domains`);
   }
 
 

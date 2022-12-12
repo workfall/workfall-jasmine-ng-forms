@@ -6,6 +6,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { HotelCardComponent } from '../../components/hotel-card/hotel-card.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 const COMPONENTS_TO_EXPORT = [
   NavBarComponent,
@@ -17,7 +18,8 @@ const MODULES_TO_EXPORT = [
   FormsModule,
   NgbModule,
   RouterModule,
-  HttpClientModule
+  HttpClientModule,
+  FontAwesomeModule
 ];
 
 
