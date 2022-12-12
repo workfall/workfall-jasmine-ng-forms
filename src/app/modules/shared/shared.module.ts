@@ -5,16 +5,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { HotelCardComponent } from '../../components/hotel-card/hotel-card.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const COMPONENTS_TO_EXPORT = [
-  NavBarComponent
+  NavBarComponent,
+  HotelCardComponent
 ];
 
 const MODULES_TO_EXPORT = [
   ReactiveFormsModule,
   FormsModule,
   NgbModule,
-  RouterModule
+  RouterModule,
+  HttpClientModule
 ];
 
 
@@ -22,7 +25,6 @@ const MODULES_TO_EXPORT = [
 @NgModule({
   declarations: [
     ...COMPONENTS_TO_EXPORT,
-    HotelCardComponent
   ],
   imports: [
     CommonModule,
