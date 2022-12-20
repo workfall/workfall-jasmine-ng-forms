@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { SharedModule } from 'src/app/modules/shared/shared.module';
 
 import { HotelCardComponent } from './hotel-card.component';
 
@@ -8,7 +9,10 @@ describe('HotelCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HotelCardComponent ]
+      declarations: [ HotelCardComponent ],
+      imports: [
+        SharedModule
+      ]
     })
     .compileComponents();
 
