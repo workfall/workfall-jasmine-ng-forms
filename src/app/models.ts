@@ -12,7 +12,7 @@ export type Domain = {
 }
 export type SupportedLocale = {
   key: string,
-  language_code?: null,
+  language_code: null | string,
   language_id: number,
 }
 
@@ -354,7 +354,7 @@ export interface PropertiesEntity {
   priceAfterLoyaltyPointsApplied: PriceAfterLoyaltyPointsApplied;
   propertyFees?: (AttributesEntityOrPropertyFeesEntityOrPricingScheme | null)[] | null;
   reviews: Reviews;
-  star: number;
+  star: number | null;
   supportingMessages?: null;
   regionId: string;
   priceMetadata: PriceMetadata;
