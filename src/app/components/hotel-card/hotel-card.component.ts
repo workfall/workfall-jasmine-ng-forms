@@ -9,5 +9,4 @@ import { PropertiesEntity } from 'src/app/models';
 export class HotelCardComponent {
   @Input() data!: PropertiesEntity;
 
-  handleViewImage() {}
 }

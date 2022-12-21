@@ -20,8 +20,6 @@ export class HomeComponent implements OnInit {
   domains!: Domain[];
   regions!: Region[];
   locales!: SupportedLocale[];
-  selectedRegion!: string;
-  selectedDomain!: string;
 
   constructor(
     private apiService: ApiService,
@@ -71,7 +69,7 @@ export class HomeComponent implements OnInit {
       adults_number: '1',
       checkin_date,
     }).subscribe(res => {
-      this.hotels = res.properties || [];
+      this.hotels = res.properties as PropertiesEntity[];
     })
   }
 

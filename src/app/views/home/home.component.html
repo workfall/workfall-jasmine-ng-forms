@@ -3,7 +3,7 @@
   <div class="row" [formGroup]="searchForm">
       <div class="col">
         <label for="Select Domain">Domain</label>
-        <select class="form-select" formControlName="domain" (change)="handleDomainChange($event)" aria-label="Select Domain">
+        <select class="form-select" id="select-domain" formControlName="domain" (change)="handleDomainChange($event)" aria-label="Select Domain">
           <option selected>Select Domain</option>
           <option *ngFor="let domain of domains" [value]="domain.domain">{{domain.domain}}</option>
         </select>
@@ -11,9 +11,9 @@
 
       <div class="col">
         <label for="Select Locale">Locale</label>
-        <select class="form-select" formControlName="locale" aria-label="Select Locale">
+        <select class="form-select" id="select-locale" formControlName="locale" aria-label="Select Locale">
           <option selected>Select Locale</option>
-          <option *ngFor="let locale of locales" [value]="locale.key">{{locale.key}}</option>
+          <option *ngFor="let locale of locales">{{locale.key}}</option>
         </select>
       </div>
 
@@ -23,14 +23,14 @@
           <span class="input-group-text" id="basic-addon1">
             <fa-icon [icon]="faSearch"></fa-icon>
           </span>
-          <input type="text" class="form-control" #searchInput placeholder="Enter region..." aria-label="Query"
+          <input type="text" id="search-input" class="form-control" #searchInput placeholder="Enter region..." aria-label="Query"
             aria-describedby="basic-addon1">
         </div>
       </div>
 
       <div class="col">
         <label for="Select Region">Region</label>
-        <select class="form-select" formControlName="region" aria-label="Select Region">
+        <select class="form-select" id="select-region" formControlName="region" aria-label="Select Region">
           <option selected>Select Region</option>
           <option *ngFor="let region of regions" [value]="region.gaiaId">{{region.regionNames.fullName}}</option>
         </select>
@@ -38,16 +38,16 @@
 
       <div class="col">
         <label for="Checkin">Checkin</label>
-        <input type="date" (dateSelect)="onDateSelect($event, 'checkin_date')" class="form-control" (click)="din.toggle()" ngbDatepicker #din="ngbDatepicker"/>
+        <input type="date" id="select-checkin" (dateSelect)="onDateSelect($event, 'checkin_date')" class="form-control" (click)="din.toggle()" ngbDatepicker #din="ngbDatepicker"/>
       </div>
 
       <div class="col">
         <label for="Checkout">Checkout</label>
-        <input type="date" (dateSelect)="onDateSelect($event, 'checkout_date')" class="form-control" (click)="dout.toggle()" ngbDatepicker #dout="ngbDatepicker"/>
+        <input type="date" id="select-checkout" (dateSelect)="onDateSelect($event, 'checkout_date')" class="form-control" (click)="dout.toggle()" ngbDatepicker #dout="ngbDatepicker"/>
       </div>
 
       <div class="col">
-        <button type="button" (click)="getHotels()" [disabled]="searchForm.invalid" class="btn btn-primary mt-4"> <fa-icon [icon]="faSearch"></fa-icon> Search</button>
+        <button type="button" id="search-button" (click)="getHotels()" [disabled]="searchForm.invalid" class="btn btn-primary mt-4"> <fa-icon [icon]="faSearch"></fa-icon> Search</button>
       </div>
   </div>
 
